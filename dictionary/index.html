@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
+
+    <title></title>
+
+    <!-- jQuery -->
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+
+    <!-- FontAwesome -->
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Bootstrap core JS -->
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    
+    
+</head>
+
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            
+    <h1>Dictionary</h1>
+<h2>AKA</h2>
+<p>"Associate Array", "Map", "Hash Map", "Unordered Map"</p>
+<h2>Library</h2>
+<p>built-in</p>
+<h2>Description</h2>
+<p>Contains a series of key-&gt;value mappings where the "key" is of any type that is <em>hashable</em> (meaning it has both a <code>__eq__()</code> and a <code>__hash__()</code> method).  The "value" may be of any type and value types need not be homogenous.</p>
+<h2>What Makes it Special</h2>
+<p>The underlying implementation is that of a hash table, so checks for existence are quite fast. </p>
+<h2>Construction</h2>
+<ul>
+<li><code>{}</code>: pair of braces for empty dictionary </li>
+<li><code>{1:2, 3:4}</code>: comma-separated list of the form <code>key: value</code> enclosed by braces</li>
+<li><code>dict(one=2, three=4)</code>: using <code>dict()</code> with <em>keyword arguments</em> mapping keys to values (where <code>one</code> and <code>two</code> are valid identifiers)</li>
+<li><code>dict([(1, 2), (3, 4)])</code>: using <code>dict()</code> with an iterable containing iterables with exactly two objects, the key and value</li>
+<li><code>dict(zip([1, 3], [2, 4]))</code>: using <code>dict()</code> with two iterables of equal length; the first contains a list of keys and the second contains their associated values.</li>
+<li><code>dict({1:2, 3:4})</code>: using <code>dict()</code> with the literal form as an argument. This is silly. Why would you want this?</li>
+</ul>
+<h2>Mutability</h2>
+<p><code>mutable</code></p>
+<h2>Ordering</h2>
+<p><code>undefined</code></p>
+<h2>When to Use It</h2>
+<p>When describing what you want to do, if you use the word "map" (or "match"), chances are good 
+you need a dictionary. Use whenver a mapping from a key to a value is required. </p>
+<h2>Example Usage</h2>
+<p><code>state_captials={'New York': 'Albany'}</code> </p>
+<p>"New York" is a <em>key</em> and "Albany" is a <em>value</em>. This allows us to retrieve a state's capital if
+we have the state's name by doing <code>capital = state_captials[state]</code></p>
+<h2>Methods and Uses</h2>
+<hr />
+<h3><code>d.clear()</code></h3>
+<p>Remove all entries in <code>d</code></p>
+<h4>Returns</h4>
+<p>N/A</p>
+<h4>Raises</h4>
+<p>N/A</p>
+<h4>Examples</h4>
+<p>Delete all items in a dictionary</p>
+<pre><code class="py">d.clear()
+</code></pre>
+
+<hr />
+<h3><code>d.copy()</code></h3>
+<p>Make a <em>shallow</em> copy of <code>d</code>. The dictionary returned by <code>d.copy()</code> will have
+the same references as <code>d</code>, not copies of the items.</p>
+<h4>Returns</h4>
+<p>A new <code>dict</code>, representing a <em>shallow</em> copy of <code>d</code></p>
+<h4>Raises</h4>
+<p>N/A</p>
+<h4>Examples</h4>
+<p>Create copy of a dictionary</p>
+<pre><code class="py">d = {1: 'a', 2: 'b', 3: 'c'}
+copied_dict = d.copy()
+copied_dict # {1: 'a', 2: 'b', 3: 'c'}
+d[1] = 'z'
+copied_dict # {1: 'a', 2: 'b', 3: 'c'}
+</code></pre>
+
+<hr />
+<h3><code>del k[d]</code></h3>
+<p>Used to remove a value from a dictionary</p>
+<h4>Returns</h4>
+<p>N/A</p>
+<h4>Raises</h4>
+<p><code>KeyError</code> if key is not in dictionary</p>
+<h4>Examples</h4>
+<p>Delete entry with key 'hello'</p>
+<pre><code class="py">my_dictionary = {'hello': 1, 'goodbye': 2}
+del my_dictionary['hello']
+print(my_dictionary)
+# {'goodbye': 2}
+</code></pre>
+
+<hr />
+<h3><code>dict.fromkeys(seq[, value])</code></h3>
+<p>Create a new dictionary with the same keys as <code>seq</code>. If <code>value</code> is provided,
+each item's value is set to <code>value</code>. If <code>value</code> is not set, all item values are set to
+<code>None</code></p>
+<h4>Returns</h4>
+<p>N/A</p>
+<h4>Raises</h4>
+<p>N/A</p>
+<h4>Examples</h4>
+<p>Create a dictionary from a list with all values initialized to 0</p>
+<pre><code class="py">my_list = [1, 2, 3]
+my_dictionary = dict.fromkeys(my_list, 0)
+my_dictionary # {1: 0, 2: 0, 3: 0}
+</code></pre>
+
+<p>Create a dictionary from a dictionary with all values automatically initialized to <code>None</code></p>
+<pre><code class="py">my_dictionary = {1: 1, 2: 2, 3: 3}
+new_dictionary = dict.fromkeys(my_dictionary)
+my_dictionary # {1: None, 2: None, 3: None}
+</code></pre>
+
+<hr />
+<h3><code>k in d</code></h3>
+<p>Used to iterate over the keys, values, or both of the dictionary.</p>
+<h4>Returns</h4>
+<p>N/A</p>
+<h4>Raises</h4>
+<p>N/A</p>
+<h4>Examples</h4>
+<p>Iterate over keys</p>
+<pre><code class="py">for key in my_dictionary:
+</code></pre>
+
+<p>Iterate over <code>(key, value)</code> tuples</p>
+<pre><code class="py">for key, value in my_dictionary.items():
+</code></pre>
+
+<p>Iterate over values</p>
+<pre><code class="py">for value in my_dictionary.values():
+</code></pre>
+
+<p>Check for existence</p>
+<pre><code class="py">haystack = {}
+# ...
+if 'needle' in haystack:
+</code></pre>
+
+<hr />
+<h3><code>iter(d)</code></h3>
+<p>Used to iterate over the keys of <code>d</code></p>
+<h4>Returns</h4>
+<p>An <code>iterator</code> which iterates over the keys of <code>d</code></p>
+<h4>Raises</h4>
+<p><code>StopIteration</code> when <code>d</code> has no more keys</p>
+<h4>Examples</h4>
+<p>Iterate over keys</p>
+<pre><code class="py">for key in my_dictionary:
+</code></pre>
+
+<hr />
+<h3><code>d[key]</code></h3>
+<p>Used to access the value corresponding to the key <code>key</code> in <code>d</code>.</p>
+<h4>Returns</h4>
+<p>Value associated with the key (heterogenous)</p>
+<h4>Raises</h4>
+<p><code>KeyError</code> when <code>key</code> is not a member of <code>d</code>.</p>
+<h4>Examples</h4>
+<pre><code class="python">capitals = {'New York': 'Albany'}`
+capital_of_ny = capitals['New York']`
+print capital_of_ny`
+'Albany'
+</code></pre>
+
+<hr />
+<h3><code>len(d)</code></h3>
+<p>Used to determine the number of entries in a dictionary</p>
+<h4>Returns</h4>
+<p>Length of dictionary <code>d</code></p>
+<h4>Raises</h4>
+<p>N/A</p>
+<h4>Examples</h4>
+<pre><code class="py">print 'dictionary has {} entries'.format(len(d))
+</code></pre>
+
+<hr />
+<h3><code>k not in d</code></h3>
+<p>Used for negative existence check. Equivalent to <code>not key in value</code></p>
+<h4>Returns</h4>
+<p><code>True</code> if <code>key</code> is not in <code>value</code>, <code>False</code> otherwise</p>
+<h4>Raises</h4>
+<p>N/A</p>
+<h4>Examples</h4>
+<p>Check for negative existence</p>
+<pre><code class="py">haystack = {}
+# ...
+if 'needle' not in haystack:
+</code></pre>
+
+            
+            
+        </div>
+    </div>
+</div>
+    </body>
+</html>

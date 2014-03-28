@@ -1,0 +1,66 @@
+<link href="bootstrap.min.css" rel="stylesheet">
+<div class="container">
+<h1>Dictionary</h1>
+<h2>AKA</h2>
+<p>&quot;Associate Array&quot;, &quot;Map&quot;, &quot;Hash Map&quot;, &quot;Unordered Map&quot;</p>
+<h2>Library</h2>
+<p>built-in</p>
+<h2>Description</h2>
+<p>Contains a series of key-&gt;value mappings where the &quot;key&quot; is of any type that is <em>hashable</em> (meaning it has both a <code>__eq__()</code> and a <code>__hash__()</code> method). The &quot;value&quot; may be of any type and value types need not be homogenous.</p>
+<h2>What Makes it Special</h2>
+<p>The underlying implementation is that of a hash table, so checks for existence are quite fast.</p>
+<h2>Construction</h2>
+<ul>
+<li><code>{}</code>: pair of braces for empty dictionary</li>
+<li><code>{1:2, 3:4}</code>: comma-separated list of the form <code>key: value</code> enclosed by braces</li>
+<li><code>dict(one=2, three=4)</code>: using <code>dict()</code> with <em>keyword arguments</em> mapping keys to values (where <code>one</code> and <code>two</code> are valid identifiers)</li>
+<li><code>dict([(1, 2), (3, 4)])</code>: using <code>dict()</code> with an iterable containing iterables with exactly two objects, the key and value</li>
+<li><code>dict(zip([1, 3], [2, 4]))</code>: using <code>dict()</code> with two iterables of equal length; the first contains a list of keys and the second contains their associated values.</li>
+<li><code>dict({1:2, 3:4})</code>: using <code>dict()</code> with the literal form as an argument. This is silly. Why would you want this?</li>
+</ul>
+<h2>Mutability</h2>
+<p><code>mutable</code></p>
+<h2>Ordering</h2>
+<p><code>undefined</code></p>
+<h2>When to Use It</h2>
+<p>When describing what you want to do, if you use the word &quot;map&quot; (or &quot;match&quot;), chances are good you need a dictionary. Use whenver a mapping from a key to a value is required.</p>
+<h2>Example Usage</h2>
+<p><code>state_captials={'New York': 'Albany'}</code></p>
+<p>&quot;New York&quot; is a <em>key</em> and &quot;Albany&quot; is a <em>value</em>. This allows us to retrieve a state's capital if we have the state's name by doing <code>capital = state_captials[state]</code></p>
+<h2>Methods and Uses</h2>
+<hr />
+<h3><code>in</code></h3>
+<p>Used to iterate over the keys, values, or both of the dictionary.</p>
+<h4>Returns</h4>
+<p>N/A</p>
+<h4>Raises</h4>
+<p>N/A</p>
+<h4>Examples</h4>
+<pre class="py"><code>for key in my_dictionary:</code></pre>
+<p>Iterate over keys</p>
+<pre class="py"><code>for key, value in my_dictionary.items():</code></pre>
+<p>Iterate over <code>(key, value)</code> tuples</p>
+<pre class="py"><code>for value in my_dictionary.values():</code></pre>
+<p>Iterate over values</p>
+<hr />
+<h3><code>len(d)</code></h3>
+<p>Used to determine the number of entries in a dictionary</p>
+<h4>Returns</h4>
+<p>Length of dictionary <code>d</code></p>
+<h4>Raises</h4>
+<p>N/A</p>
+<h4>Examples</h4>
+<pre class="py"><code>print &#39;dictionary has {} entries&#39;.format(len(d))</code></pre>
+<hr />
+<h3><code>d[key]</code></h3>
+<p>Used to access the value corresponding to the key <code>key</code> in <code>d</code>.</p>
+<h4>Returns</h4>
+<p>Value associated with the key (heterogenous)</p>
+<h4>Raises</h4>
+<p><code>KeyError</code> when <code>key</code> is not a member of <code>d</code>.</p>
+<h4>Examples</h4>
+<pre class="sourceCode python"><code class="sourceCode python">capitals = {<span class="st">&#39;New York&#39;</span>: <span class="st">&#39;Albany&#39;</span>}`
+capital_of_ny = capitals[<span class="st">&#39;New York&#39;</span>]`
+<span class="dt">print</span> capital_of_ny`
+<span class="co">&#39;Albany&#39;</span></code></pre>
+</div>
